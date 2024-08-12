@@ -32,7 +32,9 @@ class SqlController extends Controller
 
     public function raw_query(string $sql)
     {
-        DB::getPdo()->query($sql);
+        DB::select($sql);
+
+        DB::statement($sql);
     }
 
     public function sql_without_prepare(string $value)
